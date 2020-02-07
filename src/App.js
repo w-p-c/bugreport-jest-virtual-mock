@@ -1,6 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+let aliasModule;
+
+try {
+  aliasModule = require("alias/module");
+} catch (e) {
+  console.log('require("alias/module") - module does not exist');
+}
+
+if (typeof aliasModule !== "undefined") {
+  console.log(`require("alias/module") - module exists`);
+}
 
 function App() {
   return (
